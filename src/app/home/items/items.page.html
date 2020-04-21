@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button  class="ion-defaultHref='/home'"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      {{myItems.name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-grid>
+    <ion-row>
+      <ion-col size-md="3" size-sm="6">
+  <ion-list class="ion-no-padding " >
+      <ion-item>
+        {{ myItems.name }}
+      </ion-item>
+      <ion-item>
+        {{ myItems.description }}
+      </ion-item>
+      <ion-item>
+        <ion-label> Done </ion-label>
+        <ion-checkbox (ionChange)="onClickCheck(myItems.id)" slot="start" [(ngModel)]="myItems.done"></ion-checkbox>
+      </ion-item>
+
+  </ion-list>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>
